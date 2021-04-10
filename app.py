@@ -1,4 +1,4 @@
-from flask import Flask, flash, request, render_template, jsonify
+from flask import Flask, render_template
 import pandas as pd
 import os
 
@@ -6,8 +6,6 @@ app = Flask(__name__)
 
 IMAGE_FOLDER = os.path.join('static', 'img')
 app.config['IMAGE_FOLDER'] = IMAGE_FOLDER
-
-print('asdasd')
 
 
 @app.route("/")
