@@ -1,0 +1,5 @@
+admin-2-gh-pages
+__pycache__
+venv/
+data/
+.DS_Store
