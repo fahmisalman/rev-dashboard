@@ -1,7 +1,7 @@
 admin-2-gh-pages
 __pycache__
 venv/
-data/
 .DS_Store
 Untitled.ipynb
 .ipynb_checkpoints/
+*.xlsx
