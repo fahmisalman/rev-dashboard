@@ -9,7 +9,7 @@ var myPieChart = new Chart(ctx, {
   data: {
     labels: ["Rev 1", "Rev 2", "Rev 3", "Rev 4"],
     datasets: [{
-      data: [31, 32, 18, 19],
+      data: arr_rev,
       backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#db2720'],
       hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf', '#aa1b16'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
