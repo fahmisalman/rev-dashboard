@@ -39,11 +39,6 @@ def main():
     data3 = pd.read_csv('data/data3.csv', sep=';')
     dataprogram = data3[list(data3)].values.tolist()
 
-    temp_arr = [
-        ['1', '1', '1', '1', '1', '1', '1', '1', '1'],
-        ['2', '2', '2', '2', '2', '2', '2', '2', '2']
-    ]
-
     return render_template('index.html', arr_rev=arr_rev, temp_arr=dataprogram)
 
 
