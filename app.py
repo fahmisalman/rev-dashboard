@@ -27,7 +27,6 @@ def nocache(view):
 @app.route("/")
 @nocache
 def main():
-    # Pie chart
     data2 = pd.read_csv('data/data2.csv', sep=';')
     rev = []
     for column in data2.columns[1:]:
@@ -37,7 +36,19 @@ def main():
     for i, val in enumerate(rev):
         arr_rev.append(val/rev_sum*100)
 
-    return render_template('index.html', arr_rev=arr_rev)
+    data3 = pd.read_csv('data/data3.csv', sep=';')
+    dataprogram = data3[list(data3)].values.tolist()
+
+    return render_template('index.html', arr_rev=arr_rev, temp_arr=dataprogram)
+
+
+@app.route("/pengadaan")
+@nocache
+def pengadaan():
+    data1 = pd.read_csv('data/data1.csv', sep=';')
+    datapengadaan = data1[list(data1)].values.tolist()
+
+    return render_template('pengadaan.html', temp_arr=datapengadaan)
 
 
 if __name__ == "__main__":

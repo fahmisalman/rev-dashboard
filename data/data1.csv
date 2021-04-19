@@ -1,2 +1,2 @@
-No;Nama;Item;qty;satuan;specs;reject;unapprove;approve
-1;AAA;Laptop;2;unit;"14"" - Hitam";;;v
+No;Nama Barang;Tahun;Merk;Anggaran;Jumlah Awal;Jumlah Saat Ini;Photo;Reject;Unapprove;Approve
+1;ZAS;2020;Toshiba;xxx;xxx;xxx;Photo-1;-;v;-

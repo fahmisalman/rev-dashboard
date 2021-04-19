@@ -28,6 +28,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
+        <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
@@ -93,87 +94,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Program 2021</h1>
-                    </div>
-
-                    <!-- Content Row -->
-
-                    <div class="row">
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Realisasi Anggaran</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Tahun:</div>
-                                            <a class="dropdown-item" href="#">2021</a>
-                                            <a class="dropdown-item" href="#">2020</a>
-                                            <a class="dropdown-item" href="#">2019</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Rev 1
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Rev 2
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Rev 3
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-danger"></i> Rev 4
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Total Penyerapan</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Tahun</div>
-                                            <a class="dropdown-item" href="#">2021</a>
-                                            <a class="dropdown-item" href="#">2020</a>
-                                            <a class="dropdown-item" href="#">2019</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        <h1 class="h3 mb-0 text-gray-800">Pengadaan</h1>
                     </div>
 
                     <!-- DataTales Example -->
@@ -187,27 +108,31 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Kegiatan</th>
+                                            <th>Nama Barang</th>
                                             <th>Tahun</th>
-                                            <th>Output</th>
+                                            <th>Merk</th>
                                             <th>Anggaran</th>
-                                            <th>Realisasi Anggaran</th>
-                                            <th>Presentasi Realisasi Anggaran</th>
-                                            <th>RAB</th>
-                                            <th>Proposal</th>
+                                            <th>Jumlah Awal</th>
+                                            <th>Jumlah Saat Ini</th>
+                                            <th>Photo</th>
+                                            <th>Reject</th>
+                                            <th>Unapprove</th>
+                                            <th>Approve</th>
                                         </tr>
                                     </thead>
                                     <!-- <tfoot>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Kegiatan</th>
+                                            <th>Nama Barang</th>
                                             <th>Tahun</th>
-                                            <th>Output</th>
+                                            <th>Merk</th>
                                             <th>Anggaran</th>
-                                            <th>Realisasi Anggaran</th>
-                                            <th>Presentasi Realisasi Anggaran</th>
-                                            <th>RAB</th>
-                                            <th>Proposal</th>
+                                            <th>Jumlah Awal</th>
+                                            <th>Jumlah Saat Ini</th>
+                                            <th>Photo</th>
+                                            <th>Reject</th>
+                                            <th>Unapprove</th>
+                                            <th>Approve</th>
                                         </tr>
                                     </tfoot> -->
                                     <tbody>
@@ -222,6 +147,8 @@
                                             <td>{{ row[6] }}</td>
                                             <td>{{ row[7] }}</td>
                                             <td>{{ row[8] }}</td>
+                                            <td>{{ row[9] }}</td>
+                                            <td>{{ row[10] }}</td>
                                         </tr>
                                         {% endfor %}                       
                                     </tbody>
@@ -278,12 +205,6 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <!-- {{ url_for('static', filename='vendor/jquery/jquery.min.js') }} -->
-
-    <script type="text/javascript">
-        var arr_rev = {{ arr_rev | tojson }}
-    </script>
-
     <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
@@ -294,13 +215,10 @@
     <script src="{{ url_for('static', filename='js/sb-admin-2.min.js') }}"></script>
 
     <!-- Page level plugins -->
-    <script src="{{ url_for('static', filename='vendor/chart.js/Chart.min.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ url_for('static', filename='vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{ url_for('static', filename='js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/demo/chart-pie-demo.js') }}"></script>
     <script src="{{ url_for('static', filename='js/demo/datatables-demo.js') }}"></script>
 
 </body>

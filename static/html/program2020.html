@@ -13,13 +13,13 @@
 
     <!-- Custom fonts for this template-->
     
-    <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href='../vendor/fontawesome-free/css/all.min.css'" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{ url_for('static', filename='css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href='../css/sb-admin-2.min.css'rel="stylesheet">
 
 </head>
 
@@ -28,6 +28,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
+        <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
@@ -43,13 +44,13 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="../index.html">
                     <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
                     <span>Program</span></a>
             </li>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="/pengadaan">
+                <a class="nav-link" href="pengadaan.html">
                     <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
                     <span>Pengadaan</span></a>
             </li>
@@ -78,7 +79,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{ url_for('static', filename='img/undraw_profile.svg') }}">
+                                    src='../img/undraw_profile.svg'>
                             </a>
                         
                         </li>
@@ -93,10 +94,8 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Program 2021</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Program 2020</h1>
                     </div>
-
-                    <!-- Content Row -->
 
                     <div class="row">
 
@@ -106,7 +105,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Realisasi Anggaran</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Relaksasi Anggaran</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -115,9 +114,9 @@
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Tahun:</div>
-                                            <a class="dropdown-item" href="#">2021</a>
-                                            <a class="dropdown-item" href="#">2020</a>
-                                            <a class="dropdown-item" href="#">2019</a>
+                                            <a class="dropdown-item" href="../index.html">2021</a>
+                                            <a class="dropdown-item" href="program2020.html">2020</a>
+                                            <a class="dropdown-item" href="program2019.html">2019</a>
                                         </div>
                                     </div>
                                 </div>
@@ -159,9 +158,9 @@
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                             aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Tahun</div>
-                                            <a class="dropdown-item" href="#">2021</a>
-                                            <a class="dropdown-item" href="#">2020</a>
-                                            <a class="dropdown-item" href="#">2019</a>
+                                            <a class="dropdown-item" href="../index.html">2021</a>
+                                            <a class="dropdown-item" href="program2020.html">2020</a>
+                                            <a class="dropdown-item" href="program2019.html">2019</a>
                                         </div>
                                     </div>
                                 </div>
@@ -197,7 +196,7 @@
                                             <th>Proposal</th>
                                         </tr>
                                     </thead>
-                                    <!-- <tfoot>
+                                    <tfoot>
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Kegiatan</th>
@@ -209,21 +208,19 @@
                                             <th>RAB</th>
                                             <th>Proposal</th>
                                         </tr>
-                                    </tfoot> -->
+                                    </tfoot>
                                     <tbody>
-                                        {% for row in temp_arr: %}
                                         <tr>
-                                            <td>{{ row[0] }}</td>
-                                            <td>{{ row[1] }}</td>
-                                            <td>{{ row[2] }}</td>
-                                            <td>{{ row[3] }}</td>
-                                            <td>{{ row[4] }}</td>
-                                            <td>{{ row[5] }}</td>
-                                            <td>{{ row[6] }}</td>
-                                            <td>{{ row[7] }}</td>
-                                            <td>{{ row[8] }}</td>
-                                        </tr>
-                                        {% endfor %}                       
+                                            <td>1</td>
+                                            <td>Pendayagunaan hasil litkaji</td>
+                                            <td>2021</td>
+                                            <td>xxx</td>
+                                            <td>xxx</td>
+                                            <td>xxx</td>
+                                            <td>xxx</td>
+                                            <td>Berupa lampiran</td>
+                                            <td>Berupa lampiran</td>
+                                        </tr>                       
                                     </tbody>
                                 </table>
                             </div>
@@ -278,30 +275,27 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <!-- {{ url_for('static', filename='vendor/jquery/jquery.min.js') }} -->
-
-    <script type="text/javascript">
-        var arr_rev = {{ arr_rev | tojson }}
-    </script>
-
-    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="{{ url_for('static', filename='js/sb-admin-2.min.js') }}"></script>
+    <script src="../js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="{{ url_for('static', filename='vendor/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="../vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{ url_for('static', filename='js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/demo/chart-pie-demo.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/demo/datatables-demo.js') }}"></script>
+    <script src="../js/demo/chart-area-demo.js"></script>
+    <script src="../js/demo/chart-pie-demo.js"></script>
+
+    <!-- Page level plugins -->
+    <script src='../vendor/datatables/jquery.dataTables.min.js'></script>
+    <script src='../vendor/datatables/dataTables.bootstrap4.min.js'></script>
+
+    <script src='../js/demo/datatables-demo.js'></script>
 
 </body>
 
