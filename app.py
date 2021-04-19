@@ -26,10 +26,7 @@ def nocache(view):
 
 @app.route("/")
 @nocache
-def main(year=2021):
-    # Pie chart
-
-    print(year)
+def main():
     data2 = pd.read_csv('data/data2.csv', sep=';')
     rev = []
     for column in data2.columns[1:]:
@@ -38,29 +35,25 @@ def main(year=2021):
     rev_sum = sum(rev)
     for i, val in enumerate(rev):
         arr_rev.append(val/rev_sum*100)
+
+    data3 = pd.read_csv('data/data3.csv', sep=';')
+    dataprogram = data3[list(data3)].values.tolist()
 
     temp_arr = [
         ['1', '1', '1', '1', '1', '1', '1', '1', '1'],
         ['2', '2', '2', '2', '2', '2', '2', '2', '2']
     ]
 
-    return render_template('index.html', arr_rev=arr_rev, temp_arr=temp_arr)
+    return render_template('index.html', arr_rev=arr_rev, temp_arr=dataprogram)
 
 
 @app.route("/pengadaan")
 @nocache
 def pengadaan():
-    # Pie chart
-    data2 = pd.read_csv('data/data2.csv', sep=';')
-    rev = []
-    for column in data2.columns[1:]:
-        rev.append(sum(data2[column]))
-    arr_rev = []
-    rev_sum = sum(rev)
-    for i, val in enumerate(rev):
-        arr_rev.append(val/rev_sum*100)
+    data1 = pd.read_csv('data/data1.csv', sep=';')
+    datapengadaan = data1[list(data1)].values.tolist()
 
-    return render_template('pengadaan.html')
+    return render_template('pengadaan.html', temp_arr=datapengadaan)
 
 
 if __name__ == "__main__":
