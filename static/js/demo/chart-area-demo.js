@@ -32,21 +32,29 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["1", "2", "3", "4"],
+    labels: sum_header,
     datasets: [{
-      label: 'My First Dataset',
-      data: [65, 59, 80, 81],
+      label: 'Perubahan anggaran',
+      data: sum_data,
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(255, 159, 64, 0.2)',
         'rgba(255, 205, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)'
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(123, 134, 1, 0.2)',
+        'rgba(86, 54, 245, 0.2)',
+        'rgba(190, 13, 192, 0.2)',
+        'rgba(125, 50, 142, 0.2)'
       ],
       borderColor: [
         'rgb(255, 99, 132)',
         'rgb(255, 159, 64)',
         'rgb(255, 205, 86)',
-        'rgb(75, 192, 192)'
+        'rgb(75, 192, 192)',
+        'rgba(123, 134, 1)',
+        'rgba(86, 54, 245)',
+        'rgba(190, 13, 192)',
+        'rgba(125, 50, 142)'
       ],
       borderWidth: 1
     }],
@@ -80,7 +88,7 @@ var myLineChart = new Chart(ctx, {
           padding: 10,
           // Include a dollar sign in the ticks
           callback: function(value, index, values) {
-            return '$' + number_format(value);
+            return 'Rp ' + number_format(value);
           }
         },
         gridLines: {
@@ -112,7 +120,7 @@ var myLineChart = new Chart(ctx, {
       callbacks: {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+          return datasetLabel + ': Rp ' + number_format(tooltipItem.yLabel);
         }
       }
     }
