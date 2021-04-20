@@ -27,28 +27,43 @@ def nocache(view):
 @app.route("/")
 @nocache
 def main():
-    data2 = pd.read_csv('data/data2.csv', sep=';')
-    rev = []
-    for column in data2.columns[1:]:
-        rev.append(sum(data2[column]))
-    arr_rev = []
-    rev_sum = sum(rev)
-    for i, val in enumerate(rev):
-        arr_rev.append(val/rev_sum*100)
+    data2 = pd.read_csv('data/klasifikasi_kegiatan.csv', sep=';')
+    labels = list(data2['Row Labels'])
+    rev = list(data2['Sum of Revisi Akhir'])
 
-    data3 = pd.read_csv('data/data3.csv', sep=';')
+    data4 = pd.read_csv('data/perubahan_anggaran.csv', sep=';')
+    sum_header = list(data4)
+    sum_data = data4[list(data4)].values.tolist()[0]
+
+    data3 = pd.read_csv('data/realisasi.csv', sep=';')
+    dataprogramheader = list(data3)
+
+    data3 = data3.query('Tahun<2026 and Tahun>2019')
     dataprogram = data3[list(data3)].values.tolist()
 
-    return render_template('index.html', arr_rev=arr_rev, temp_arr=dataprogram)
+    return render_template('index.html',
+                           arr_rev=rev,
+                           labels=labels,
+                           sum_header=sum_header,
+                           sum_data=sum_data,
+                           dataprogram=dataprogram,
+                           dataprogramheader=dataprogramheader,
+                           dataprogramlength=len(dataprogram))
 
 
 @app.route("/pengadaan")
 @nocache
 def pengadaan():
-    data1 = pd.read_csv('data/data1.csv', sep=';')
+    data1 = pd.read_csv('data/pengadaan.csv', sep=';')
+    datapengadaanheader = list(data1)
+
+    data1 = data1.query('Tahun<2026')
     datapengadaan = data1[list(data1)].values.tolist()
 
-    return render_template('pengadaan.html', temp_arr=datapengadaan)
+    return render_template('pengadaan.html',
+                           datapengadaan=datapengadaan,
+                           datapengadaanheader=datapengadaanheader,
+                           datapengadaanlength=len(datapengadaan))
 
 
 if __name__ == "__main__":

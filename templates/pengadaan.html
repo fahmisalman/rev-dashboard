@@ -100,55 +100,24 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Perencanaan Pengadaan</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Nama Barang</th>
-                                            <th>Tahun</th>
-                                            <th>Merk</th>
-                                            <th>Anggaran</th>
-                                            <th>Jumlah Awal</th>
-                                            <th>Jumlah Saat Ini</th>
-                                            <th>Photo</th>
-                                            <th>Reject</th>
-                                            <th>Unapprove</th>
-                                            <th>Approve</th>
+                                        {% for row in datapengadaanheader: %}
+                                            <th>{{ row }}</th>
+                                        {% endfor %}
                                         </tr>
                                     </thead>
-                                    <!-- <tfoot>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Barang</th>
-                                            <th>Tahun</th>
-                                            <th>Merk</th>
-                                            <th>Anggaran</th>
-                                            <th>Jumlah Awal</th>
-                                            <th>Jumlah Saat Ini</th>
-                                            <th>Photo</th>
-                                            <th>Reject</th>
-                                            <th>Unapprove</th>
-                                            <th>Approve</th>
-                                        </tr>
-                                    </tfoot> -->
                                     <tbody>
-                                        {% for row in temp_arr: %}
+                                        {% for i in range(datapengadaanlength): %}
                                         <tr>
-                                            <td>{{ row[0] }}</td>
-                                            <td>{{ row[1] }}</td>
-                                            <td>{{ row[2] }}</td>
-                                            <td>{{ row[3] }}</td>
-                                            <td>{{ row[4] }}</td>
-                                            <td>{{ row[5] }}</td>
-                                            <td>{{ row[6] }}</td>
-                                            <td>{{ row[7] }}</td>
-                                            <td>{{ row[8] }}</td>
-                                            <td>{{ row[9] }}</td>
-                                            <td>{{ row[10] }}</td>
+                                            {% for row in datapengadaan[i]: %}
+                                            <td>{{ row }}</td>
+                                            {% endfor %}
                                         </tr>
                                         {% endfor %}                       
                                     </tbody>
